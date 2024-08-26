@@ -1,0 +1,37 @@
+{% assign item = include.item %}
+{% if item.icon %}
+    {% assign icon = item.icon %}
+{% else %}
+    {% assign icon = 'newspaper-o' %}
+{% endif %}
+
+{% capture desc %}
+    <div class="date">{{ item.date | date_to_long_string }}</div>
+    {% if item.shortnews %}
+        {{ item.content | markdownify }}
+    {% else %}
+        <a href="{{ item.url }}" class="blog-title">{{ item.title }}</a>
+        {{ item.excerpt }}
+        <a href="{{ item.url }}">» Read more</a>
+    {% endif %}
+{% endcapture %}
+
+<li>    
+    <div class="icon"><i class="fa fa-{{icon}}"></i></div>
+    <div class="text">
+        {% if item.image %}
+        <div class="row">
+            <div class="col-sm-10">
+                {{ desc }}
+            </div>
+            <div class="col-sm-2">
+                <a href="{{ item.image_link }}">
+                    <img class="img-fluid d-block mx-auto" style="{{ item.image_style }}" src="{{ item.image }}">
+                </a>
+            </div>
+        </div>
+        {% else %}
+        {{ desc }}
+        {% endif %}
+    </div>
+</li>

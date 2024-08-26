@@ -1,0 +1,21 @@
+prof-anand:
+    display_name: "Prof Ravi Anand"
+    role: faculty
+    webpage: "https://www.iiitd.ac.in/ravianand#"
+    image: /img/people/prof-anand.jpg
+    bio: Assistant Professor (CSE)
+
+ankurb:
+    display_name: "Ankur Bohra"
+    bio: B.Tech. CSE @ IIITD
+    role: ugrad
+
+himanshus:
+    display_name: "Himanshu Singh"
+    bio: B.Tech. CSE @ IIITD
+    role: ugrad
+
+shashwatj:
+    display_name: "Shashwat Jha"
+    bio: B.Tech. CSAM @ IIITD
+    role: ugrad

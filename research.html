@@ -1,0 +1,32 @@
+---
+layout: default
+title: Research
+---
+<section>
+    <h3>Active Research</h3>
+    <div class="card-columns">
+        {% comment %}
+        Sort the projects by date, putting those without dates last
+        {% endcomment %}
+        {% assign projects_by_date = site.projects | where: 'inactive', nil | where: 'ignore', nil | sort: 'last-updated', 'first' %}
+        {% assign projects_by_date = projects_by_date | reverse %}
+        {% for p in projects_by_date %}
+            {% include project-card.html project=p %}
+        {% endfor %}
+    </div>
+</section>
+
+<section>
+    <h3>Previous Research</h3>
+    <div class="card-columns">
+        {% comment %}
+        Sort the projects by date, putting those without dates last
+        {% endcomment %}
+        {% assign projects_by_date = site.projects | where: 'inactive', true | where: 'ignore', nil | sort: 'last-updated', 'first' %}
+        {% assign projects_by_date = projects_by_date | reverse %}
+        {% for p in projects_by_date %}
+            {% include project-card.html project=p %}
+        {% endfor %}
+    </div>
+</section>
+
